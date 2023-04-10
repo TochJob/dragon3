@@ -201,11 +201,12 @@ export default {
     &__games {
         display: flex;
         flex-wrap: wrap;
+        gap: 10px
     }
 
     &__game {
         text-decoration: none;
-        margin: 10px 10px;
+
     }
 
     &__game-name {
@@ -238,6 +239,26 @@ export default {
     }
 
 
+
+}
+
+@media screen and (max-width:992px) {
+    .slots {
+        &__buttons {
+            &-wrapper {
+                display: none;
+            }
+        }
+
+        &__winners {
+            flex-wrap: wrap;
+            display: none;
+        }
+        &__games{
+            align-items: center;
+            justify-content: center;
+        }
+    }
 
 }
 </style>

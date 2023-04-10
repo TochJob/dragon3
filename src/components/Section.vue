@@ -9,8 +9,8 @@
             </div>
         </section>
         <aside class="aside">
-            <Sidebar/>
-            <Buttons/>
+            <Sidebar />
+            <Buttons />
         </aside>
 
 
@@ -21,7 +21,7 @@ import Banner from './Section/Banner.vue';
 import Slots from './Section/Slots.vue';
 import Information from './Section/Information.vue';
 import Sidebar from './Section/Sidebar.vue';
-import Buttons from './Section/Buttons.vue';    
+import Buttons from './Section/Buttons.vue';
 export default {
     name: 'SectionLanding',
     components: {
@@ -102,11 +102,13 @@ export default {
 .wrapper {
     display: flex;
     padding: 0 51px 0 230px;
+    background: url(@/assets/img/seat_woman.png) right bottom 20% no-repeat, url(@/assets/img/stay_woman.png) left top no-repeat;
 }
 
 .section {
     padding: 0 83px 0 0;
     max-width: 1140px;
+    box-sizing: content-box;
 
     &__title {
         font-family: 'PT Sans';
@@ -123,13 +125,30 @@ export default {
 }
 
 .aside {
-    width: 276px;
-    background: lightblue;
+    max-width: 276px;
 }
 
 @media screen and (max-width:1540px) {
     .section {
         max-width: 960px;
+        padding-right: 45px;
+    }
+
+    .wrapper {
+        padding: 0 30px;
+        background: url(http://localhost:8080/img/seat_woman.04b3cc42.png) right bottom 20% no-repeat;
+    }
+}
+
+@media screen and (max-width:1050px) {
+    .aside {
+        display: none;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .section{
+        padding: 0 ;
     }
 }
 </style>

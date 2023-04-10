@@ -15,7 +15,7 @@ export default {
 
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .sidebar {
     background-color: #303131;
     display: flex;
@@ -76,5 +76,15 @@ export default {
 
     }
 
+}
+
+@media screen and (max-width:1050px) {
+    .sidebar{
+        &__button{
+            margin-bottom: 15px;
+            width: 100%;
+        }
+    }
+    
 }
 </style>

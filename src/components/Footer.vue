@@ -42,9 +42,10 @@ export default {
 .footer {
     display: flex;
     justify-content: space-between;
+    padding: 36px 43px 36px 43px;
 
     &__list {
-        margin: 32px 0 0 0;
+        margin:0;
     }
 
     &__heading {

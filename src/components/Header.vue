@@ -35,6 +35,8 @@ export default {
     align-items: center;
 
     &__buttons {
+        margin-left: auto;
+
         .login {
             background: linear-gradient(180deg, #50C5AC 0%, #3FA18D 50%, #2E7F70 100%);
             font-family: 'PT Sans';
@@ -73,5 +75,31 @@ export default {
         text-decoration: none;
     }
 
+}
+
+
+
+@media screen and (max-width:1500px) {
+    .navigation {
+        margin-left: 15px;
+        display: flex;
+        gap: 15px;
+
+        &__link {
+            margin-right: 0;
+            font-size: 16px;
+        }
+    }
+}
+
+@media screen and (max-width:1050px) {
+    .navigation {
+        display: none;
+    }
+    .header{
+        &__buttons{
+            display: none;
+        }
+    }
 }
 </style>

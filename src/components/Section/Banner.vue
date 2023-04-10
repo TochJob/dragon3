@@ -28,22 +28,25 @@ export default {
     background: #131313;
     border-radius: 14px;
     max-width: 1135px;
-    padding:52px 169px 52px 66px;
+    padding: 52px 169px 52px 66px;
     position: relative;
     z-index: 1;
+
     &__img {
-        position:absolute;
-        z-index:-1;
-       &.girl{
-        height: 222px;
-        top:0;
-        right: 48%;
-       } 
-       &.money{
-        right:35px;
-        bottom:0;
-        height: 189px;
-       }
+        position: absolute;
+        z-index: -1;
+
+        &.girl {
+            height: 222px;
+            top: 0;
+            right: 48%;
+        }
+
+        &.money {
+            right: 35px;
+            bottom: 0;
+            height: 189px;
+        }
     }
 
     &__heading {
@@ -60,7 +63,7 @@ export default {
         font-weight: 700;
         font-size: 15px;
         color: #FFFFFF;
-        padding:0 0 0 0;
+        padding: 0 0 0 0;
     }
 
     &__link {
@@ -78,5 +81,61 @@ export default {
     }
 
 
+}
+
+@media screen and (max-width:1500px) {
+    .banner {
+        padding: 42px 100px 42px 42px;
+        background: url(@/assets/img/banner/girl.png) left 50% bottom no-repeat;
+        background-color: #131313;
+        background-size: contain;
+
+        .girl {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width:992px) {
+    .banner {
+        max-width: 760px;
+        padding: 40px;
+
+        &__link {
+            font-size: 15px;
+            padding: 10px 20px;
+        }
+
+        &__heading {
+            font-size: 34px;
+            line-height: 38px;
+        }
+    }
+}
+
+@media screen and (max-width:620px) {
+    .banner {
+        &__link {
+            font-size: 13px;
+            padding: 10px 15px;
+        }
+    }
+}
+
+@media screen and (max-width:576px) {
+    .banner {
+        &__link {
+            font-size: 10px;
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &__heading{
+            width: auto;
+            max-width: 280px;
+        }
+
+    }
 }
 </style>
