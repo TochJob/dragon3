@@ -1,44 +1,56 @@
 <template lang="">
   <div class="burger__wrapper">
     <div class="burger" @click="isModalOpen = !isModalOpen">
-      <img src="@/assets/img/icons/menu.png" alt="burger" v-if="!isModalOpen">
-      <img src="@/assets/img/icons/close.png" alt="burger" v-else>
+      <img src="@/assets/img/icons/menu.png" alt="burger" v-if="!isModalOpen" />
+      <img src="@/assets/img/icons/close.png" alt="burger" v-else />
     </div>
-    <aside class="burger__menu"  :class="{open:isModalOpen}">
+    <aside class="burger__menu" :class="{ open: isModalOpen }">
       <div class="header__buttons">
-            <button class="button" :class="item.option" v-for="(item, index) of headerButtons" :key="index">{{ item.name
-            }}</button>
-        </div>
-      <Sidebar  class="burger__sidebar"/>
+        <a
+          class="button"
+          :href="siteLink"
+          :class="item.option"
+          v-for="(item, index) of headerButtons"
+          :key="index"
+        >
+          {{ item.name }}
+        </a>
+      </div>
+      <Sidebar class="burger__sidebar" />
       <Buttons />
     </aside>
   </div>
 </template>
 
-
 <script>
-import Sidebar from '@/components/Section/Sidebar.vue';
-import Buttons from '@/components/Section/Buttons.vue';
+import Sidebar from "@/components/Section/Sidebar.vue";
+import Buttons from "@/components/Section/Buttons.vue";
+import { mapGetters } from "vuex";
 export default {
-  name: 'BurgerSection',
+  name: "BurgerSection",
   components: {
     Sidebar,
-    Buttons
+    Buttons,
   },
   data() {
     return {
       isModalOpen: false,
-      headerButtons: [{
-        name: 'Вход',
-        option: 'login'
-      },
-      {
-        name: 'Регистрация',
-        option: 'registration'
-      }]
-    }
+      headerButtons: [
+        {
+          name: "Вход",
+          option: "login",
+        },
+        {
+          name: "Регистрация",
+          option: "registration",
+        },
+      ],
+    };
   },
-}
+  computed: {
+    ...mapGetters(["siteLink"]),
+  },
+};
 </script>
 <style lang="scss" scoped>
 .burger {
@@ -47,7 +59,7 @@ export default {
 
   &__menu {
     position: fixed;
-    transition: all .3s;
+    transition: all 0.3s;
     z-index: 9;
     top: 0;
     right: -0%;
@@ -70,13 +82,12 @@ export default {
     top: 30px;
     right: 30px;
   }
-
-
 }
 
-@media screen and (max-width:1050px) {
+@media screen and (max-width: 1200px) {
   .burger {
-    &__menu {}
+    &__menu {
+    }
 
     img {
       width: 30px;
@@ -85,7 +96,6 @@ export default {
     &__wrapper {
       display: block;
     }
-
   }
 }
 
@@ -97,28 +107,39 @@ export default {
   &__buttons {
     margin-left: auto;
 
+    .button {
+      text-decoration: none;
+      display: inline-block;
+    }
+
     .login {
-      background: linear-gradient(180deg, #50C5AC 0%, #3FA18D 50%, #2E7F70 100%);
-      font-family: 'PT Sans';
+      background: linear-gradient(180deg, #50c5ac 0%, #3fa18d 50%, #2e7f70 100%);
+      font-family: "PT Sans";
       font-weight: 400;
       font-size: 15px;
       line-height: 35px;
-      color: #FFFFFF;
+      color: #ffffff;
       padding: 0 36px;
-      border: 1px solid #55A399;
+      border: 1px solid #55a399;
       margin: 0 8px 0 0;
     }
 
     .registration {
-      background: linear-gradient(180deg, #DE3C21 0%, #C32C1C 100%);
-      font-family: 'PT Sans';
+      background: linear-gradient(180deg, #de3c21 0%, #c32c1c 100%);
+      font-family: "PT Sans";
       font-weight: 400;
       font-size: 15px;
       line-height: 35px;
-      color: #FFFFFF;
+      color: #ffffff;
       padding: 0 48px;
-      border: 1px solid #BC2502;
-
+      border: 1px solid #bc2502;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .burger {
+    &__wrapper {
+      top: 15px;
     }
   }
 }

@@ -4,37 +4,42 @@
     <Section />
     <Partners />
     <Footer />
-    <Burger/>
+    <Burger />
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import Section from './components/Section.vue';
-import Partners from './components/Section/Partners.vue';
-import Footer from './components/Footer.vue';
-import Burger from './components/Burger.vue';
-
+import Header from "./components/Header.vue";
+import Section from "./components/Section.vue";
+import Partners from "./components/Section/Partners.vue";
+import Footer from "./components/Footer.vue";
+import Burger from "./components/Burger.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
     Section,
     Partners,
     Footer,
-    Burger
-}
-}
+    Burger,
+  },
+  data() {
+    return {
+    }
+  },
+};
 </script>
 
 <style>
-@import '@/assets/scss/fonts.scss';
+@import "@/assets/scss/fonts.scss";
 
 * {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
+  transition: all .3s;
+
 }
 
 #app {
@@ -46,11 +51,7 @@ export default {
   cursor: pointer;
 }
 
-
-
-
 @media (min-width: 575.98px) {
-
   section,
   header,
   footer {
@@ -59,7 +60,6 @@ export default {
 }
 
 @media (min-width: 767.98px) {
-
   section,
   header,
   footer {
@@ -68,7 +68,6 @@ export default {
 }
 
 @media (min-width: 991.98px) {
-
   section,
   header,
   footer {
@@ -77,14 +76,10 @@ export default {
 }
 
 @media (min-width: 1199.98px) {
-
   section,
   header,
   footer {
     padding: 0 calc(50vw - 590px);
   }
 }
-
-
-
 </style>

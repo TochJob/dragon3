@@ -1,18 +1,24 @@
 <template>
-    <div class="img">
-        <img class="img__partners" src="@/assets/img/section-img.png" alt="Partners">
-    </div>
+  <a :href="siteLink" class="img">
+    <img class="img__partners" src="@/assets/img/section-img.png" alt="Partners" />
+  </a>
 </template>
 <script>
+import { mapGetters } from "vuex";
+
 export default {
-    name: 'PartnersLanding',
-    
-}
+  name: "PartnersLanding",
+  computed: {
+    ...mapGetters(["siteLink"]),
+  },
+};
 </script>
 <style lang="scss" scoped>
-    .img {
-        &__partners {
-            width: 100%;
-        }
-    }
+.img {
+    display: block;
+    text-decoration: none;
+  &__partners {
+    width: 100%;
+  }
+}
 </style>

@@ -126,6 +126,7 @@ export default {
 
 .aside {
     max-width: 276px;
+    margin-left: auto;
 }
 
 @media screen and (max-width:1540px) {
@@ -140,15 +141,29 @@ export default {
     }
 }
 
-@media screen and (max-width:1050px) {
+@media screen and (max-width:1200px) {
     .aside {
         display: none;
     }
 }
 
 @media screen and (max-width:992px) {
-    .section{
-        padding: 0 ;
+    .section {
+        padding: 0;
     }
 }
+
+@media screen and (max-width:480px) {
+    .section{
+        &__title{
+            font-size: 17px;
+            margin: 20px 0;
+        }
+    }
+    .infos{
+        padding: 30px 0;
+        background: #303131d4;
+    }
+}
+
 </style>

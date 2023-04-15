@@ -30,4 +30,18 @@ export default {
         color: rgba(255, 255, 255, .6);
     }
 }
+
+
+@media screen and (max-width:480px) {
+    .info{
+        &__heading{
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        &__description{
+            font-size: 11px;
+            line-height: 150%;
+        }
+    }
+}
 </style>
